@@ -13,7 +13,7 @@ SECRET_KEY = "django-insecure-hcs44jbf8$u-tbc+t97)84pvax*o2m4&^agn2#hmr#%-$&mn#a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["44.221.17.219", "127.0.0.1"]
 
 
 # Application definition
@@ -64,9 +64,16 @@ WSGI_APPLICATION = "ms_galenos_web_pacientes.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "api_rest_django",
+        "USER": "mysql",
+        "PASSWORD": "password",
+        "HOST": "mysql_db",
+        "PORT": "3306",
+        "OPTIONS": {
+            "sql_mode": "traditional",
+        },
+    },
 }
 
 
